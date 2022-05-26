@@ -2,8 +2,8 @@ POST http://localhost:5500/todo/create
 Content-Type: application/json
 
 {
-    "todo1":"testTodo1",
-    "todo2":"testTOdo2"
+    "todo1":"test5",
+    "todo2":"test5"
 }
 
 ###
