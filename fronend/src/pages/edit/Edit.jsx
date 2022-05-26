@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./edit.scss";
-function Edit(props) {
+function Edit() {
   const [todo1, setTodo1] = useState("");
   const [todo2, setTodo2] = useState("");
   const { todoId } = useParams();
-
+  let navigate = useNavigate();
   useEffect(() => {
     async function componentDidMount() {
       await axios
@@ -61,7 +61,13 @@ function Edit(props) {
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn-edit">
+          <button
+            type="submit"
+            className="btn-edit"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             Edit todo
           </button>
         </div>
